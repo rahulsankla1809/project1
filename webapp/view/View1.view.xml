@@ -65,7 +65,7 @@
 					<Text
 						text="{Supplier/CompanyName}" />
 					<Text
-						text="{UnitPrice}" />
+						text="{path: 'UnitPrice', formatter: '.formatter.fomratNumber'}" />
 					<Text
 						text="{QuantityPerUnit}" />
 					<Text
@@ -75,6 +75,5 @@
 		</items>
 	</Table>
 </content >
-
     </Page>
 </mvc:View>
