@@ -12,7 +12,7 @@
 		inset="false"
 		items="{
 			path: '/Products',
-            expand: 'Category, Supplier',
+            parameters: { 'expand' : 'Category, Supplier' },
 			sorter: {
 				path: 'ProductName'
 			}
@@ -32,7 +32,8 @@
 		</infoToolbar>
 		<columns>
 			<Column
-				width="12em">
+				width="12em"
+                demandPopin="true">
 				<Text text="ProductName" />
 			</Column>
 			<Column
@@ -50,26 +51,29 @@
 				hAlign="End">
 				<Text text="Quantity Per Unit" />
 			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Discontinued" />
+			</Column>
 		</columns>
 		<items>
 			<ColumnListItem vAlign="Middle">
 				<cells>
 					<ObjectIdentifier
 						title="{ProductName}"
-						text="{/Categories/Description}"/>
+						text="{Category/Description}"/>
 					<Text
-						text="{/Supplier/CompanyName}" />
+						text="{Supplier/CompanyName}" />
 					<Text
 						text="{UnitPrice}" />
 					<Text
 						text="{QuantityPerUnit}" />
+					<Text
+						text="{Discontinued}" />
 				</cells>
 			</ColumnListItem>
 		</items>
 	</Table>
-
-
-
 </content >
 
     </Page>
