@@ -7,7 +7,7 @@
                 inset="false"
                 items="{
                     path: '/Products',
-                    parameters: { 'expand' : 'Category, Supplier' },
+                    parameters: { 'expand' : 'Category, Supplier, Order_Details' },
                     sorter: {
                         path: 'ProductName'
                     }
@@ -50,6 +50,11 @@
                         hAlign="End">
                         <Text text="Discontinued" />
                     </Column>
+                    <Column
+                        hAlign="End">
+                        <Text text="Order ID" />
+
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem vAlign="Middle">
@@ -67,6 +72,11 @@
                                 colorScheme="{path: 'Discontinued', formatter:'formatter.getDiscountinuedColorScheme'}"/> -->
                             <Text
                                 text="{Discontinued}" />
+                            <Text
+                                text="{Order_Details/OrderID}" />
+
+
+
 
                         </cells>
                     </ColumnListItem>
